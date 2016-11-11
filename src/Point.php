@@ -9,6 +9,16 @@ namespace Viny;
 class Point
 {
     /**
+     * @var float
+     */
+    protected $latitude;
+
+    /**
+     * @var float
+     */
+    protected $longitude;
+
+    /**
      * @param float $latitude
      * @param float $longitude
      */
