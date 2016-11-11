@@ -1,5 +1,5 @@
 # Point Type
-Point Type Doctrine
+Point Type to Doctrine2
 
 ## How to use
 
