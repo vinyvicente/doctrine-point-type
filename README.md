@@ -15,7 +15,8 @@ After, add in your bootstrap:
 
 
 ```php
-<?php
+
+use Doctrine\DBAL\Types\Type;
 
 $em = YourEntityManager();
 
