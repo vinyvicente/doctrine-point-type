@@ -1,0 +1,20 @@
+{
+    "name": "vinyvicente/doctrine-point-type",
+    "authors": [
+        {
+            "name": "Vinicius",
+            "email": "vinyvicente@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "doctrine/dbal": "^2.5",
+        "phpunit/phpunit": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Viny\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
