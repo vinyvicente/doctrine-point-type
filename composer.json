@@ -1,5 +1,6 @@
 {
     "name": "vinyvicente/doctrine-point-type",
+    "license": "MIT",
     "authors": [
         {
             "name": "Vinicius",
