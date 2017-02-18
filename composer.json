@@ -15,6 +15,5 @@
         "psr-4": {
             "Viny\\": "src/"
         }
-    },
-    "minimum-stability": "dev"
+    }
 }
