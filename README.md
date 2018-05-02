@@ -31,4 +31,24 @@ $em->getConnection()->getDatabasePlatform()->registerDoctrineTypeMapping('point'
 
 ```
 
+Or add it in your app/config yml files
+```
+doctrine:
+    dbal:
+        types:
+            point: Viny\PointType
+        default_connection: default
+        connections:
+            default:
+                driver: pdo_mysql
+                host: '%database_host%'
+                port: '%database_port%'
+                dbname: '%database_name%'
+                user: '%database_user%'
+                password: '%database_password%'
+                charset: UTF8
+                mapping_types:
+                    point: point
+```
+
 ### Enjoy!
