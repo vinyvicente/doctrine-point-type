@@ -8,7 +8,7 @@ require __DIR__ . '/../bootstrap.php';
 /**
  * Class PointTypeTest
  */
-class PointTypeTest extends \Doctrine\Tests\DbalTestCase
+class PointTypeTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var \Viny\PointType $type
