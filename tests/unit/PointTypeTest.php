@@ -8,7 +8,7 @@ require __DIR__ . '/../bootstrap.php';
 /**
  * Class PointTypeTest
  */
-class PointTypeTest extends \Doctrine\Tests\DbalTestCase
+class PointTypeTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var \Viny\PointType $type
@@ -19,7 +19,8 @@ class PointTypeTest extends \Doctrine\Tests\DbalTestCase
     {
         Type::addType('point', 'Viny\\PointType');
 
-        $this->platform = new MockPlatform();
+        $this->platform = $this->getMockForAbstractClass('Doctrine\DBAL\Platforms\AbstractPlatform', [], '', true, true);;
+
         $this->type = Type::getType('point');
     }
 
