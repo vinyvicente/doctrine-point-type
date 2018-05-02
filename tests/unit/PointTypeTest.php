@@ -19,7 +19,8 @@ class PointTypeTest extends \PHPUnit\Framework\TestCase
     {
         Type::addType('point', 'Viny\\PointType');
 
-        $this->platform = new MockPlatform();
+        $this->platform = $this->getMockForAbstractClass('Doctrine\DBAL\Platforms\AbstractPlatform', [], '', true, true);;
+
         $this->type = Type::getType('point');
     }
 
