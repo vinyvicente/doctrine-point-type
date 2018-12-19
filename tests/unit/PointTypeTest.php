@@ -15,10 +15,13 @@ class PointTypeTest extends \Doctrine\Tests\DbalTestCase
      */
     protected $platform, $type;
 
-    public function setUp()
+    public static function setUpBeforeClass()
     {
         Type::addType('point', 'Viny\\PointType');
+    }
 
+    public function setUp()
+    {
         $this->platform = new MockPlatform();
         $this->type = Type::getType('point');
     }
@@ -38,5 +41,12 @@ class PointTypeTest extends \Doctrine\Tests\DbalTestCase
         $this->assertEquals(strtoupper(\Viny\PointType::POINT), $this->type->getSQLDeclaration([], $this->platform));
         $this->assertEquals('POINT(-13.334440 -22.004440)', $this->type->convertToDatabaseValue($point, $this->platform));
         $this->assertInstanceOf('Viny\\Point', $this->type->convertToPHPValue($point, $this->platform));
+    }
+
+    public function testNullValue()
+    {
+        $point = $this->type->convertToPHPValue(null, $this->platform);
+
+        $this->assertEquals(null, $point);
     }
 }
