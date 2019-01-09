@@ -8,6 +8,14 @@ Point Type to Doctrine2
 [![License](https://poser.pugx.org/vinyvicente/doctrine-point-type/license)](https://packagist.org/packages/vinyvicente/doctrine-point-type)
 [![composer.lock available](https://poser.pugx.org/vinyvicente/doctrine-point-type/composerlock)](https://packagist.org/packages/vinyvicente/doctrine-point-type)
 
+### Versions:
+
+| Version  |  PHP Version |
+|---|---|
+| 1.*  |  7.0 |
+| 2.*  |  7.1 or higher |
+
+
 ## How to use
 
 First, composer install:
