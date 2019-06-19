@@ -42,7 +42,7 @@ class PointType extends Type
             return null;
         }
 
-        list($longitude, $latitude) = sscanf($value, 'POINT(%f %f)');
+        list($latitude, $longitude) = sscanf($value, 'POINT(%f %f)');
 
         return new Point($latitude, $longitude);
     }
@@ -55,7 +55,7 @@ class PointType extends Type
     public function convertToDatabaseValue($value, AbstractPlatform $platform): string
     {
         if ($value instanceof Point) {
-            $value = sprintf('POINT(%F %F)', $value->getLongitude(), $value->getLatitude());
+            $value = sprintf('POINT(%F %F)', $value->getLatitude(), $value->getLongitude());
         }
 
         return $value;
