@@ -5,13 +5,9 @@ namespace Viny;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 
-/**
- * Class PointType
- * @package Uello\Types
- */
 class PointType extends Type
 {
-    const POINT = 'point';
+    private const POINT = 'point';
 
     /**
      * @return string
@@ -28,7 +24,7 @@ class PointType extends Type
      */
     public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform): string
     {
-        return 'POINT';
+        return strtoupper(self::POINT);
     }
 
     /**

@@ -2,10 +2,6 @@
 
 namespace Viny;
 
-/**
- * Class Point
- * @package Uello\ValueObject
- */
 class Point
 {
     /**
