@@ -7,7 +7,7 @@ use Doctrine\DBAL\Platforms\AbstractPlatform;
 
 class PointType extends Type
 {
-    private const POINT = 'point';
+    const POINT = 'point';
 
     /**
      * @return string
