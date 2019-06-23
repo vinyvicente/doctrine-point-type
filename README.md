@@ -34,7 +34,7 @@ $em = YourEntityManager();
 
 Type::addType('point', 'Viny\PointType');
 
-// in case silex :)
+// in case without Symfony :)
 $em->getConnection()->getDatabasePlatform()->registerDoctrineTypeMapping('point', 'point');
 
 ```
