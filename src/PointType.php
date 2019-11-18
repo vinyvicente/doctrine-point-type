@@ -48,7 +48,7 @@ class PointType extends Type
      * @param AbstractPlatform $platform
      * @return mixed|string
      */
-    public function convertToDatabaseValue($value, AbstractPlatform $platform): string
+    public function convertToDatabaseValue($value, AbstractPlatform $platform): ?string
     {
         if ($value instanceof Point) {
             $value = sprintf('POINT(%F %F)', $value->getLatitude(), $value->getLongitude());
