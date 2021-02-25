@@ -15,7 +15,7 @@ class PointTypeTest extends \PHPUnit\Framework\TestCase
      */
     protected $platform, $type;
 
-    public function setUp()
+    public function setUp(): void
     {
         Type::addType('point', 'Viny\\PointType');
 
@@ -33,8 +33,8 @@ class PointTypeTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(-13.33444, $point->getLongitude());
         $this->assertEquals(-22.00444, $point->getLatitude());
         $this->assertTrue($this->type->canRequireSQLConversion(), "Point type require SQL conversion to work.");
-        $this->assertEquals('PointFromText(POINT(-22.004440 -13.334440))', $this->type->convertToDatabaseValueSQL($point, $this->platform));
-        $this->assertEquals('AsText(POINT(-22.004440 -13.334440))', $this->type->convertToPHPValueSQL($point, $this->platform));
+        $this->assertEquals('ST_PointFromText(POINT(-22.004440 -13.334440))', $this->type->convertToDatabaseValueSQL($point, $this->platform));
+        $this->assertEquals('ST_AsText(POINT(-22.004440 -13.334440))', $this->type->convertToPHPValueSQL($point, $this->platform));
         $this->assertEquals(\Viny\PointType::POINT, $this->type->getName());
         $this->assertEquals(strtoupper(\Viny\PointType::POINT), $this->type->getSQLDeclaration([], $this->platform));
         $this->assertEquals('POINT(-22.004440 -13.334440)', $this->type->convertToDatabaseValue($point, $this->platform));
