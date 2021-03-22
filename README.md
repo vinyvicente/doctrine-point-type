@@ -40,7 +40,7 @@ $em->getConnection()->getDatabasePlatform()->registerDoctrineTypeMapping('point'
 ```
 
 Or add it in your app/config yml files
-```
+```yaml
 doctrine:
     dbal:
         types:
@@ -57,6 +57,13 @@ doctrine:
                 charset: UTF8
                 mapping_types:
                     point: point
+```
+
+Symfony Normalization is supported, just add the tag in your app/services yml file
+```yaml
+services:
+  Viny\PointNormalizer:
+    tags: ['serializer.normalizer']
 ```
 
 ### Enjoy!
