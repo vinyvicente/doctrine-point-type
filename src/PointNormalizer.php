@@ -2,10 +2,11 @@
 
 namespace Viny;
 
+use Symfony\Component\Serializer\Normalizer\CacheableSupportsMethodInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
-class PointNormalizer implements NormalizerInterface, DenormalizerInterface
+class PointNormalizer implements NormalizerInterface, DenormalizerInterface, CacheableSupportsMethodInterface
 {
     /**
      * @param Point $object
@@ -36,5 +37,10 @@ class PointNormalizer implements NormalizerInterface, DenormalizerInterface
     public function supportsDenormalization($data, string $type, string $format = null): bool
     {
         return Point::class === $type;
+    }
+
+    public function hasCacheableSupportsMethod(): bool
+    {
+        return true;
     }
 }
