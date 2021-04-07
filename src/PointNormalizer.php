@@ -28,6 +28,8 @@ class PointNormalizer implements NormalizerInterface, DenormalizerInterface, Cac
 
     /**
      * @param array{latitude:float,longitude:float} $data
+     *
+     * @return Point
      */
     public function denormalize($data, string $type, string $format = null, array $context = []): Point
     {

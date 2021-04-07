@@ -1,17 +1,21 @@
 <?php
 
-use Doctrine\Tests\DBAL\Mocks\MockPlatform;
-use Doctrine\DBAL\Types\Type;
+namespace Viny\Tests;
 
-require __DIR__ . '/../bootstrap.php';
+use Doctrine\DBAL\Platforms\AbstractPlatform;
+use Doctrine\DBAL\Types\Type;
+use PHPUnit\Framework\TestCase;
+use Viny\PointType;
 
 /**
  * Class PointTypeTest
+ *
+ * @package Viny\Tests
  */
-class PointTypeTest extends \PHPUnit\Framework\TestCase
+class PointTypeTest extends TestCase
 {
     /**
-     * @var \Viny\PointType $type
+     * @var PointType $type
      */
     protected $platform, $type;
 
@@ -19,7 +23,7 @@ class PointTypeTest extends \PHPUnit\Framework\TestCase
     {
         Type::addType('point', 'Viny\\PointType');
 
-        $this->platform = $this->getMockForAbstractClass(\Doctrine\DBAL\Platforms\AbstractPlatform::class, [], '', true, true);;
+        $this->platform = $this->getMockForAbstractClass(AbstractPlatform::class, [], '', true, true);
 
         $this->type = Type::getType('point');
     }
@@ -35,8 +39,8 @@ class PointTypeTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue($this->type->canRequireSQLConversion(), "Point type require SQL conversion to work.");
         $this->assertEquals('ST_PointFromText(POINT(-22.004440 -13.334440))', $this->type->convertToDatabaseValueSQL($point, $this->platform));
         $this->assertEquals('ST_AsText(POINT(-22.004440 -13.334440))', $this->type->convertToPHPValueSQL($point, $this->platform));
-        $this->assertEquals(\Viny\PointType::POINT, $this->type->getName());
-        $this->assertEquals(strtoupper(\Viny\PointType::POINT), $this->type->getSQLDeclaration([], $this->platform));
+        $this->assertEquals(PointType::POINT, $this->type->getName());
+        $this->assertEquals(strtoupper(PointType::POINT), $this->type->getSQLDeclaration([], $this->platform));
         $this->assertEquals('POINT(-22.004440 -13.334440)', $this->type->convertToDatabaseValue($point, $this->platform));
         $this->assertInstanceOf('Viny\\Point', $this->type->convertToPHPValue($point, $this->platform));
         $this->assertNull($this->type->convertToPHPValue(null, $this->platform));
