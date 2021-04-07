@@ -1,7 +1,13 @@
 <?php
+declare(strict_types=1);
 
 namespace Viny;
 
+/**
+ * Class Point
+ *
+ * @package Viny
+ */
 class Point
 {
     /**

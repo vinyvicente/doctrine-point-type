@@ -1,9 +1,12 @@
 <?php
+declare(strict_types=1);
 
 namespace Viny;
 
 use Doctrine\DBAL\Types\Type;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
+use function sprintf;
+use function strtoupper;
 
 class PointType extends Type
 {
@@ -18,11 +21,11 @@ class PointType extends Type
     }
 
     /**
-     * @param array $fieldDeclaration
+     * @param array $column
      * @param AbstractPlatform $platform
      * @return string
      */
-    public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform): string
+    public function getSQLDeclaration(array $column, AbstractPlatform $platform): string
     {
         return strtoupper(self::POINT);
     }
@@ -36,6 +39,10 @@ class PointType extends Type
     {
         if (empty($value)) {
             return null;
+        }
+
+        if ($value instanceof Point) {
+            return $value;
         }
 
         list($latitude, $longitude) = sscanf($value, 'POINT(%f %f)');
