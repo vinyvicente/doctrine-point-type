@@ -10,10 +10,11 @@ Point Type to Doctrine2
 
 ### Versions:
 
-| Version  |  PHP Version |
-|---|---|
-| 1.*  |  7.0 |
-| 2.*  |  7.1 or higher |
+| Version | PHP Version   |
+|---------|---------------|
+| 1.*     | 7.0           |
+| 2.*     | 7.1 or higher |
+| 3.*     | 7.4 or higher |
 
 
 ## How to use
@@ -29,10 +30,11 @@ After, add in your bootstrap:
 
 ```php
 use Doctrine\DBAL\Types\Type;
+use Viny\PointType;
 
 $em = YourEntityManager();
 
-Type::addType('point', 'Viny\PointType');
+Type::addType('point', PointType::class);
 
 // in case without Symfony :)
 $em->getConnection()->getDatabasePlatform()->registerDoctrineTypeMapping('point', 'point');
