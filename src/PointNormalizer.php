@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Viny;
 
@@ -10,6 +11,8 @@ class PointNormalizer implements NormalizerInterface, DenormalizerInterface, Cac
 {
     /**
      * @param Point $object
+     * @param string|null $format
+     * @param array $context
      *
      * @return array{latitude:float,longitude:float}
      */
@@ -28,6 +31,9 @@ class PointNormalizer implements NormalizerInterface, DenormalizerInterface, Cac
 
     /**
      * @param array{latitude:float,longitude:float} $data
+     * @param string $type
+     * @param string|null $format
+     * @param array $context
      *
      * @return Point
      */
