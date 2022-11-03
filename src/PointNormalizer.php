@@ -24,7 +24,7 @@ class PointNormalizer implements NormalizerInterface, DenormalizerInterface, Cac
         ];
     }
 
-    public function supportsNormalization($data, string $format = null): bool
+    public function supportsNormalization($data, string $format = null, array $context = []): bool
     {
         return $data instanceof Point;
     }
@@ -42,7 +42,7 @@ class PointNormalizer implements NormalizerInterface, DenormalizerInterface, Cac
         return new Point($data['latitude'], $data['longitude']);
     }
 
-    public function supportsDenormalization($data, string $type, string $format = null): bool
+    public function supportsDenormalization($data, string $type, string $format = null, array $context = []): bool
     {
         return Point::class === $type;
     }
