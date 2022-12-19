@@ -8,8 +8,8 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
-        "doctrine/dbal": "^2.5|^3",
+        "php": ">=8.2",
+        "doctrine/dbal": "^3",
         "symfony/serializer": "^5.2|^6"
     },
     "require-dev": {
