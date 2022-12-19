@@ -5,10 +5,7 @@ namespace Viny;
 
 class Point
 {
-    protected float $latitude;
-    protected float $longitude;
-
-    public function __construct(float $latitude, float $longitude)
+    public function __construct(private readonly float $latitude, private readonly float $longitude)
     {
         $this->latitude  = $latitude;
         $this->longitude = $longitude;

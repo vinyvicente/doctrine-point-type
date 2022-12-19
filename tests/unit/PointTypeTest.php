@@ -14,10 +14,8 @@ use Viny\PointType;
  */
 class PointTypeTest extends TestCase
 {
-    /**
-     * @var PointType $type
-     */
-    protected $platform, $type;
+    protected PointType $type;
+    protected AbstractPlatform $platform;
 
     public function setUp(): void
     {
@@ -28,7 +26,7 @@ class PointTypeTest extends TestCase
         $this->type = Type::getType('point');
     }
 
-    public function testConvertToPHPValue()
+    public function testConvertToPHPValue(): void
     {
         $point = $this->type->convertToPHPValue('POINT(-22.00444 -13.33444)', $this->platform);
 

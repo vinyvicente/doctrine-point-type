@@ -15,6 +15,7 @@ Point Type to Doctrine2
 | 1.*     | 7.0           |
 | 2.*     | 7.1 or higher |
 | 3.*     | 7.4 or higher |
+| 4.*     | 8.2 or higher |
 
 
 ## How to use
