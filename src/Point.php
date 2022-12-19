@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 namespace Viny;
 
-class Point
+use Stringable;
+
+class Point implements Stringable
 {
     public function __construct(private readonly float $latitude, private readonly float $longitude)
     {
-        $this->latitude  = $latitude;
-        $this->longitude = $longitude;
     }
 
     public function getLatitude(): float
