@@ -5,9 +5,9 @@ namespace Viny;
 
 use Stringable;
 
-class Point implements Stringable
+readonly class Point implements Stringable
 {
-    public function __construct(private readonly float $latitude, private readonly float $longitude)
+    public function __construct(private float $latitude, private float $longitude)
     {
     }
 
