@@ -3,11 +3,10 @@ declare(strict_types=1);
 
 namespace Viny;
 
-use Symfony\Component\Serializer\Normalizer\CacheableSupportsMethodInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
-class PointNormalizer implements NormalizerInterface, DenormalizerInterface, CacheableSupportsMethodInterface
+class PointNormalizer implements NormalizerInterface, DenormalizerInterface
 {
     /**
      * @param Point $object
@@ -16,7 +15,7 @@ class PointNormalizer implements NormalizerInterface, DenormalizerInterface, Cac
      *
      * @return array{latitude:float,longitude:float}
      */
-    public function normalize(Point $object, string $format = null, array $context = []): array
+    public function normalize(mixed $object, string $format = null, array $context = []): array
     {
         return [
             'latitude' => $object->getLatitude(),
@@ -37,7 +36,7 @@ class PointNormalizer implements NormalizerInterface, DenormalizerInterface, Cac
      *
      * @return Point
      */
-    public function denormalize(array $data, string $type, string $format = null, array $context = []): Point
+    public function denormalize(mixed $data, string $type, string $format = null, array $context = []): Point
     {
         return new Point($data['latitude'], $data['longitude']);
     }
@@ -50,5 +49,12 @@ class PointNormalizer implements NormalizerInterface, DenormalizerInterface, Cac
     public function hasCacheableSupportsMethod(): bool
     {
         return true;
+    }
+
+    public function getSupportedTypes(?string $format): array
+    {
+        return [
+            Point::class => true,
+        ];
     }
 }

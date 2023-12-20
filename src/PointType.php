@@ -10,7 +10,7 @@ use function strtoupper;
 
 class PointType extends Type
 {
-    const POINT = 'point';
+    public const POINT = 'point';
 
     public function getName(): string
     {
