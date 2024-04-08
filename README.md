@@ -1,8 +1,6 @@
 # Point Type
 Point Type to Doctrine2
 
-[![Build Status](https://travis-ci.org/vinyvicente/doctrine-point-type.svg?branch=master)](https://travis-ci.org/vinyvicente/doctrine-point-type)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vinyvicente/doctrine-point-type/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vinyvicente/doctrine-point-type/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/vinyvicente/doctrine-point-type/v/stable)](https://packagist.org/packages/vinyvicente/doctrine-point-type)
 [![Total Downloads](https://poser.pugx.org/vinyvicente/doctrine-point-type/downloads)](https://packagist.org/packages/vinyvicente/doctrine-point-type)
 [![License](https://poser.pugx.org/vinyvicente/doctrine-point-type/license)](https://packagist.org/packages/vinyvicente/doctrine-point-type)
@@ -10,12 +8,13 @@ Point Type to Doctrine2
 
 ### Versions:
 
-| Version | PHP Version   |
-|---------|---------------|
-| 1.*     | 7.0           |
-| 2.*     | 7.1 or higher |
-| 3.*     | 7.4 or higher |
-| 4.*     | 8.2 or higher |
+| Version | PHP Version               |
+|---------|---------------------------|
+| 1.*     | 7.0                       |
+| 2.*     | 7.1 or higher             |
+| 3.*     | 7.4 or higher             |
+| 4.*     | 8.2 or higher             |
+| 5.*     | 8.2 or higher (Symfony 7) |
 
 
 ## How to use
