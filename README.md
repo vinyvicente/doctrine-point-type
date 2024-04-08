@@ -3,8 +3,9 @@ Point Type to Doctrine2
 
 [![CI](https://github.com/vinyvicente/doctrine-point-type/actions/workflows/ci.yml/badge.svg)](https://github.com/vinyvicente/doctrine-point-type/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/vinyvicente/doctrine-point-type/graph/badge.svg?token=9avpqKeDcF)](https://codecov.io/gh/vinyvicente/doctrine-point-type)
-[![Latest Stable Version](https://poser.pugx.org/vinyvicente/doctrine-point-type/v/stable)](https://packagist.org/packages/vinyvicente/doctrine-point-type)
+![Packagist Version](https://img.shields.io/packagist/v/vinyvicente/doctrine-point-type)
 [![Total Downloads](https://poser.pugx.org/vinyvicente/doctrine-point-type/downloads)](https://packagist.org/packages/vinyvicente/doctrine-point-type)
+![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/vinyvicente/doctrine-point-type/latest/total)
 [![License](https://poser.pugx.org/vinyvicente/doctrine-point-type/license)](https://packagist.org/packages/vinyvicente/doctrine-point-type)
 [![composer.lock available](https://poser.pugx.org/vinyvicente/doctrine-point-type/composerlock)](https://packagist.org/packages/vinyvicente/doctrine-point-type)
 
