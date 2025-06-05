@@ -9,7 +9,7 @@
     ],
     "require": {
         "php": ">=8.2",
-        "doctrine/dbal": "^3",
+        "doctrine/dbal": "^3|^4",
         "symfony/serializer": "^5.2|^6|^7"
     },
     "require-dev": {
